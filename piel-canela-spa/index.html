@@ -23,6 +23,7 @@ h1,h2,h3{font-family:var(--fh)}
 .top nav a{text-decoration:none;font-size:.95rem;opacity:.8}
 .top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-fg);padding:13px 24px;border-radius:var(--r,999px);text-decoration:none;font-weight:700;font-size:.95rem;transition:filter .15s,transform .15s}
+.btn .sm{display:none}
 .btn:hover{filter:brightness(1.1)}
 .btn:active{transform:translateY(1px)}
 .ico{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
@@ -46,7 +47,7 @@ footer .nota{color:var(--muted);margin-top:6px;font-size:.8rem}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#128c4a;color:#fff;display:grid;place-items:center;box-shadow:0 6px 22px #0006}
 .wa-float .ico{width:28px;height:28px}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-@media(max-width:760px){.top nav{display:none}.loc{grid-template-columns:1fr}section{padding:56px 0}}
+@media(max-width:760px){.top nav{display:none}.top .wrap{gap:12px;min-height:60px}.brand{font-size:1.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}.top .btn{padding:10px 16px;font-size:.88rem;white-space:nowrap}.top .btn .lg{display:none}.top .btn .sm{display:inline}.loc{grid-template-columns:1fr}section{padding:56px 0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 :root{--bg:#fbf6f0;--fg:#3b2418;--muted:#7a6254;--accent:#8c4a2b;--accent-fg:#fff8f1;--line:#e9dccd;--surface:#f2e7da;--sage:#6c7f5b;--star:#b9772f;--r:999px;--r2:200px 200px 16px 16px;--fh:'Cormorant Garamond',serif;--fb:'Jost',sans-serif}
@@ -65,12 +66,12 @@ h2{font-weight:600;font-style:italic}
 .svc h3{font-weight:600;font-size:1.55rem;margin-top:8px}
 .loc address .ico{color:var(--sage)}
 iframe{border-radius:200px 200px 16px 16px}
-@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.arch{width:200px;order:-1}iframe{border-radius:16px}}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.arch{width:170px}iframe{border-radius:16px}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap"><a class="brand" href="#inicio">Piel Canela</a>
-<nav><a href="#servicios">Servicios</a><a href="#ubicacion">Ubicación</a></nav><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20agendar%20una%20cita"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Agendar por WhatsApp</a></div></header>
+<nav><a href="#servicios">Servicios</a><a href="#ubicacion">Ubicación</a></nav><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20agendar%20una%20cita"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span class="lg">Agendar por WhatsApp</span><span class="sm">Agendar</span></a></div></header>
 <main>
 <section class="hero" id="inicio"><div class="wrap"><div><h1>Piel Canela</h1><p class="lead">Masajes y cuidado de la piel, sin prisa.</p><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20agendar%20una%20cita"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Agendar por WhatsApp</a><p class="rate"><span class="stars" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span>4.8 en Google · 47 reseñas</span></p></div><div class="arch"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div></div></section>
 <section id="servicios"><div class="wrap"><h2>Tratamientos</h2><ul class="svc"><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg><h3>Masaje relajante</h3><p>Para soltar la tensión del día.</p></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><h3>Masaje descontracturante</h3><p>Trabajo enfocado en espalda y cuello.</p></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg><h3>Faciales</h3><p>Limpieza e hidratación de la piel.</p></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><h3>Cuidado corporal</h3><p>Exfoliación y tratamientos para el cuerpo.</p></li></ul></div></section>
