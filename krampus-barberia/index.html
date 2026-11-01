@@ -1,49 +1,92 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Krampus Barbería | Oaxaca</title>
-<meta name="description" content="Cortes, barba y afeitado clásico en Oaxaca. Reserva tu lugar por WhatsApp.">
+<meta name="robots" content="noindex,nofollow">
+<title>Krampus Barbería | Barbería en Oaxaca</title>
+<meta name="description" content="Cortes y barba con sabor oaxaqueño, en Jalatlaco.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#111;--g:#c9a24a;--t:#f2f2f2}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,sans-serif;line-height:1.5}
-.demo{background:var(--g);color:#111;text-align:center;padding:6px;font-size:.8rem}
-.hero{padding:80px 20px;text-align:center;background:linear-gradient(#000a,#000a),repeating-linear-gradient(45deg,#222 0 10px,#1a1a1a 10px 20px)}
-.hero h1{font-size:2.4rem;margin:0;color:var(--g);letter-spacing:2px}
-a.btn{background:var(--g);color:#111;padding:14px 26px;border-radius:4px;text-decoration:none;font-weight:800;display:inline-block;margin-top:16px}
-section{padding:40px 20px;max-width:700px;margin:auto}h2{color:var(--g)}
-.row{display:flex;justify-content:space-between;border-bottom:1px dashed #444;padding:10px 0}
-.wa{position:fixed;right:16px;bottom:16px;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;text-decoration:none;font-weight:700}
-footer{text-align:center;padding:24px;color:#888}
-iframe{width:100%;height:280px;border:0;border-radius:8px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--fb);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:var(--fh)}
+.wrap{width:min(1100px,100% - 40px);margin-inline:auto}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
+.brand{font-family:var(--fh);font-size:1.3rem;font-weight:700;text-decoration:none;margin-right:auto}
+.top nav{display:flex;gap:24px}
+.top nav a{text-decoration:none;font-size:.95rem;opacity:.8}
+.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-fg);padding:13px 24px;border-radius:var(--r,999px);text-decoration:none;font-weight:700;font-size:.95rem;transition:filter .15s,transform .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn:active{transform:translateY(1px)}
+.ico{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.star{width:18px;height:18px;fill:var(--star,currentColor)}
+.rate{display:flex;align-items:center;gap:8px;font-size:.95rem;margin-top:22px}
+.rate .stars{display:flex;gap:2px}
+section{padding:80px 0}
+h2{font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.1;margin-bottom:32px}
+.svc{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.svc h3{font-size:1.2rem;line-height:1.25;margin-bottom:6px}
+.svc p{color:var(--muted);font-size:.97rem}
+.svc .ico{width:30px;height:30px}
+.loc{display:grid;grid-template-columns:1fr 1.5fr;gap:36px;align-items:start}
+.loc address{font-style:normal;font-size:1.1rem;display:grid;gap:18px}
+.loc .btn{justify-self:start}
+iframe{width:100%;height:360px;border:0;border-radius:var(--r2,12px);background:var(--surface)}
+footer{padding:36px 0 96px;border-top:1px solid var(--line);font-size:.9rem}
+footer .nota{color:var(--muted);margin-top:6px;font-size:.8rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r2,12px)}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#128c4a;color:#fff;display:grid;place-items:center;box-shadow:0 6px 22px #0006}
+.wa-float .ico{width:28px;height:28px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:760px){.top nav{display:none}.loc{grid-template-columns:1fr}section{padding:56px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+:root{--bg:#fbf3e4;--fg:#2b1d14;--muted:#6a5547;--accent:#e4566a;--accent-fg:#2b1d14;--line:#e6d6b9;--surface:#f0e2c6;--teal:#0e7c8c;--wood:#6b3f26;--gold:#f5b400;--star:#f5b400;--r:10px;--r2:14px;--fh:'Alfa Slab One',serif;--fb:'Nunito Sans',sans-serif}
+.top{background:var(--teal);color:#fff;border-color:transparent}
+.top .brand{font-size:1.15rem}
+.top .btn{background:var(--gold)}
+.hero{background:var(--teal);color:#fff;padding:0 0 88px;text-align:center}
+.hero.con-foto{background:linear-gradient(#0e7c8cd9,#0e7c8cf2),var(--foto) center/cover}
+.bunting{display:block;width:100%;height:64px}
+.sign{position:relative;display:inline-block;margin-top:34px;padding:26px clamp(28px,6vw,64px) 22px;background:var(--wood);border-radius:12px;box-shadow:0 8px 0 #4a2a18,0 18px 30px #0004;color:#fbf3e4}
+.sign::before,.sign::after{content:"";position:absolute;top:14px;width:10px;height:10px;border-radius:50%;background:#2b1d14}
+.sign::before{left:14px}.sign::after{right:14px}
+.hero h1{font-size:clamp(3rem,11vw,7rem);line-height:.95;font-weight:400}
+.hero h1 small{display:block;font-size:.34em;letter-spacing:.14em;color:var(--gold);margin-top:.35em;font-weight:400}
+.hero p.lead{font-size:1.25rem;font-weight:700;margin:32px auto 26px;max-width:30ch}
+.hero .rate{justify-content:center}
+.hero .btn{background:var(--gold);color:#2b1d14}
+h2{color:var(--wood)}
+.svc li{background:#fff;border:3px solid var(--wood);border-radius:14px;padding:24px;box-shadow:6px 6px 0 var(--c,#e4566a)}
+.svc li:nth-child(1){--c:#e4566a}.svc li:nth-child(2){--c:#f5b400}.svc li:nth-child(3){--c:#0e7c8c}.svc li:nth-child(4){--c:#7b3fa0}
+.svc h3{font-weight:400;color:var(--wood);margin-top:12px}
+.svc .ico{color:var(--wood)}
+.loc address .ico{color:var(--teal)}
+footer{background:var(--wood);color:#fbf3e4;border:0}
+footer .nota{color:#e6d6b9}
 </style>
 </head>
 <body>
-<div class="demo">DEMO preparada para Krampus Barbería — ejemplo de cómo se vería su página. No es el sitio oficial; fotos y precios son de ejemplo.</div>
-<div class="hero">
-<h1>KRAMPUS BARBERÍA</h1>
-<p>Barbería · Cortes · Barba · Afeitado clásico</p>
-<a class="btn" href="https://wa.me/529241795248?text=Hola,%20quiero%20reservar%20un%20corte">Reservar mi lugar</a>
-</div>
-<section>
-<h2>Precios de ejemplo</h2>
-<div class="row"><span>Corte clásico</span><b>$120</b></div>
-<div class="row"><span>Corte + barba</span><b>$180</b></div>
-<div class="row"><span>Afeitado con toalla caliente</span><b>$100</b></div>
-<div class="row"><span>Corte niño</span><b>$100</b></div>
-</section>
-<section>
-<h2>Horario</h2>
-<p>Confirma disponibilidad por WhatsApp.</p>
-</section>
-<section>
-<h2>Ubicación</h2>
-<p>Pajaritos 122, Barrio de Jalatlaco, Oaxaca de Juárez</p>
-<iframe loading="lazy" src="https://www.google.com/maps?q=Pajaritos+122%2C+Barrio+de+Jalatlaco%2C+Oaxaca+de+Ju%C3%A1rez&output=embed" title="Mapa"></iframe>
-</section>
-<footer>© Krampus Barbería</footer>
-<a class="wa" href="https://wa.me/529241795248?text=Hola,%20quiero%20reservar%20un%20corte">WhatsApp</a>
+<header class="top"><div class="wrap"><a class="brand" href="#inicio">Krampus Barbería</a>
+<nav><a href="#servicios">Servicios</a><a href="#ubicacion">Ubicación</a></nav><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Reservar por WhatsApp</a></div></header>
+<main>
+<section class="hero" id="inicio"><svg class="bunting" aria-hidden="true"><defs><pattern id="pp" width="240" height="64" patternUnits="userSpaceOnUse"><path d="M0 6Q120 22 240 6" stroke="#fbf3e4" fill="none" stroke-width="1.5" opacity=".7"/><path d="M8 10h44v36l-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6z" fill="#e4566a"/><circle cx="30" cy="26" r="5" fill="#0e7c8c"/><circle cx="19" cy="36" r="2.5" fill="#0e7c8c"/><circle cx="41" cy="36" r="2.5" fill="#0e7c8c"/><path d="M68 10h44v36l-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6z" fill="#f5b400"/><circle cx="90" cy="26" r="5" fill="#0e7c8c"/><circle cx="79" cy="36" r="2.5" fill="#0e7c8c"/><circle cx="101" cy="36" r="2.5" fill="#0e7c8c"/><path d="M128 10h44v36l-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6z" fill="#fbf3e4"/><circle cx="150" cy="26" r="5" fill="#0e7c8c"/><circle cx="139" cy="36" r="2.5" fill="#0e7c8c"/><circle cx="161" cy="36" r="2.5" fill="#0e7c8c"/><path d="M188 10h44v36l-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6-5.5 6-5.5-6z" fill="#7b3fa0"/><circle cx="210" cy="26" r="5" fill="#0e7c8c"/><circle cx="199" cy="36" r="2.5" fill="#0e7c8c"/><circle cx="221" cy="36" r="2.5" fill="#0e7c8c"/></pattern></defs><rect width="100%" height="64" fill="url(#pp)"/></svg><div class="wrap"><div class="sign"><h1>Krampus<small>Barbería</small></h1></div><p class="lead">Cortes y barba con sabor oaxaqueño, en Jalatlaco.</p><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Reservar por WhatsApp</a><p class="rate"><span class="stars" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span>4.6 en Google · 82 reseñas</span></p></div></section>
+<section id="servicios"><div class="wrap"><h2>Servicios</h2><ul class="svc"><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><h3>Corte de cabello</h3><p>A tu estilo, con acabado limpio.</p></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg><h3>Barba</h3><p>Perfilado y arreglo.</p></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><h3>Afeitado clásico</h3><p>Navaja y toalla caliente.</p></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg><h3>Corte para niños</h3><p>Con paciencia y buen trato.</p></li></ul></div></section>
+<section id="ubicacion"><div class="wrap"><h2>Visítanos</h2><div class="loc">
+<address><span><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Pajaritos 122, Barrio de Jalatlaco, Oaxaca de Juárez</span><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Reservar por WhatsApp</a></address>
+<iframe loading="lazy" src="https://www.google.com/maps?q=Pajaritos+122%2C+Barrio+de+Jalatlaco%2C+Oaxaca+de+Ju%C3%A1rez&output=embed" title="Mapa de Krampus Barbería"></iframe>
+</div></div></section>
+</main>
+<footer><div class="wrap"><p>© Krampus Barbería</p>
+<p class="nota">Propuesta de diseño preparada para Krampus Barbería. No es el sitio oficial.</p></div></footer>
+<a class="wa-float" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte" aria-label="Escribir por WhatsApp"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></a>
 </body>
 </html>

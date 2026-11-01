@@ -1,49 +1,83 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Greco Barbería | Oaxaca</title>
-<meta name="description" content="Cortes, barba y afeitado clásico en Oaxaca. Reserva tu lugar por WhatsApp.">
+<meta name="robots" content="noindex,nofollow">
+<title>Greco Barbería | Barbería en Oaxaca</title>
+<meta name="description" content="Cortes, barba y cuidado personal en el Centro de Oaxaca.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#111;--g:#c9a24a;--t:#f2f2f2}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:system-ui,sans-serif;line-height:1.5}
-.demo{background:var(--g);color:#111;text-align:center;padding:6px;font-size:.8rem}
-.hero{padding:80px 20px;text-align:center;background:linear-gradient(#000a,#000a),repeating-linear-gradient(45deg,#222 0 10px,#1a1a1a 10px 20px)}
-.hero h1{font-size:2.4rem;margin:0;color:var(--g);letter-spacing:2px}
-a.btn{background:var(--g);color:#111;padding:14px 26px;border-radius:4px;text-decoration:none;font-weight:800;display:inline-block;margin-top:16px}
-section{padding:40px 20px;max-width:700px;margin:auto}h2{color:var(--g)}
-.row{display:flex;justify-content:space-between;border-bottom:1px dashed #444;padding:10px 0}
-.wa{position:fixed;right:16px;bottom:16px;background:#25d366;color:#fff;border-radius:50px;padding:14px 18px;text-decoration:none;font-weight:700}
-footer{text-align:center;padding:24px;color:#888}
-iframe{width:100%;height:280px;border:0;border-radius:8px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--fb);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:var(--fh)}
+.wrap{width:min(1100px,100% - 40px);margin-inline:auto}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
+.brand{font-family:var(--fh);font-size:1.3rem;font-weight:700;text-decoration:none;margin-right:auto}
+.top nav{display:flex;gap:24px}
+.top nav a{text-decoration:none;font-size:.95rem;opacity:.8}
+.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-fg);padding:13px 24px;border-radius:var(--r,999px);text-decoration:none;font-weight:700;font-size:.95rem;transition:filter .15s,transform .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn:active{transform:translateY(1px)}
+.ico{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.star{width:18px;height:18px;fill:var(--star,currentColor)}
+.rate{display:flex;align-items:center;gap:8px;font-size:.95rem;margin-top:22px}
+.rate .stars{display:flex;gap:2px}
+section{padding:80px 0}
+h2{font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.1;margin-bottom:32px}
+.svc{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.svc h3{font-size:1.2rem;line-height:1.25;margin-bottom:6px}
+.svc p{color:var(--muted);font-size:.97rem}
+.svc .ico{width:30px;height:30px}
+.loc{display:grid;grid-template-columns:1fr 1.5fr;gap:36px;align-items:start}
+.loc address{font-style:normal;font-size:1.1rem;display:grid;gap:18px}
+.loc .btn{justify-self:start}
+iframe{width:100%;height:360px;border:0;border-radius:var(--r2,12px);background:var(--surface)}
+footer{padding:36px 0 96px;border-top:1px solid var(--line);font-size:.9rem}
+footer .nota{color:var(--muted);margin-top:6px;font-size:.8rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r2,12px)}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#128c4a;color:#fff;display:grid;place-items:center;box-shadow:0 6px 22px #0006}
+.wa-float .ico{width:28px;height:28px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:760px){.top nav{display:none}.loc{grid-template-columns:1fr}section{padding:56px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+:root{--bg:#0b0c0f;--fg:#f2f3f5;--muted:#a3a9b5;--accent:#f2f3f5;--accent-fg:#0b0c0f;--line:#262a32;--surface:#14171c;--led:#8fc7ff;--star:#8fc7ff;--fh:'Barlow Condensed',sans-serif;--fb:'Manrope',sans-serif}
+.hero{position:relative;overflow:hidden;padding:132px 0 104px;background:radial-gradient(900px 340px at 72% 0,#17314c66,transparent 70%),var(--bg)}
+.led{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--led) 22%,#fff 50%,var(--led) 78%,transparent);box-shadow:0 0 24px 6px #8fc7ff55}
+.hero.con-foto{background:linear-gradient(#0b0c0fb8,#0b0c0ff0),var(--foto) center/cover}
+.led.a{top:34px}.led.b{top:46px;opacity:.45}
+.hero h1{font-weight:800;font-size:clamp(5rem,19vw,12.5rem);line-height:.82;letter-spacing:.01em;text-transform:uppercase}
+.hero h1 small{display:block;font-size:.2em;font-weight:600;letter-spacing:.55em;color:var(--muted);margin-top:.7em}
+.hero p.lead{font-size:1.2rem;max-width:34ch;margin:34px 0 28px;color:#dfe3ea}
+.svc{display:block}
+.svc li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:26px 0;border-top:1px solid var(--line)}
+.svc li:last-child{border-bottom:1px solid var(--line)}
+.svc h3{font-size:1.7rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+.svc .ico{color:var(--led)}
+.loc address .ico{color:var(--led)}
 </style>
 </head>
 <body>
-<div class="demo">DEMO preparada para Greco Barbería — ejemplo de cómo se vería su página. No es el sitio oficial; fotos y precios son de ejemplo.</div>
-<div class="hero">
-<h1>GRECO BARBERÍA</h1>
-<p>Barbería · Cortes · Barba · Afeitado clásico</p>
-<a class="btn" href="https://wa.me/529241795248?text=Hola,%20quiero%20reservar%20un%20corte">Reservar mi lugar</a>
-</div>
-<section>
-<h2>Precios de ejemplo</h2>
-<div class="row"><span>Corte clásico</span><b>$120</b></div>
-<div class="row"><span>Corte + barba</span><b>$180</b></div>
-<div class="row"><span>Afeitado con toalla caliente</span><b>$100</b></div>
-<div class="row"><span>Corte niño</span><b>$100</b></div>
-</section>
-<section>
-<h2>Horario</h2>
-<p>Confirma disponibilidad por WhatsApp.</p>
-</section>
-<section>
-<h2>Ubicación</h2>
-<p>Vicente Guerrero 416, Centro, Oaxaca de Juárez</p>
-<iframe loading="lazy" src="https://www.google.com/maps?q=Vicente+Guerrero+416%2C+Centro%2C+Oaxaca+de+Ju%C3%A1rez&output=embed" title="Mapa"></iframe>
-</section>
-<footer>© Greco Barbería</footer>
-<a class="wa" href="https://wa.me/529241795248?text=Hola,%20quiero%20reservar%20un%20corte">WhatsApp</a>
+<header class="top"><div class="wrap"><a class="brand" href="#inicio">Greco Barbería</a>
+<nav><a href="#servicios">Servicios</a><a href="#ubicacion">Ubicación</a></nav><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Reservar por WhatsApp</a></div></header>
+<main>
+<section class="hero" id="inicio"><div class="led a"></div><div class="led b"></div><div class="wrap"><h1>Greco<small>Barbería</small></h1><p class="lead">Cortes, barba y cuidado personal en el Centro de Oaxaca.</p><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Reservar por WhatsApp</a><p class="rate"><span class="stars" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span>4.9 en Google · 122 reseñas</span></p></div></section>
+<section id="servicios"><div class="wrap"><h2>Servicios</h2><ul class="svc"><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg><div><h3>Corte de cabello</h3><p>Cortes clásicos y modernos con acabado a detalle.</p></div></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg><div><h3>Barba</h3><p>Perfilado y arreglo para una barba pareja.</p></div></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><div><h3>Afeitado clásico</h3><p>Afeitado con toalla caliente.</p></div></li><li><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg><div><h3>Corte para niños</h3><p>Con paciencia y buen trato.</p></div></li></ul></div></section>
+<section id="ubicacion"><div class="wrap"><h2>Visítanos</h2><div class="loc">
+<address><span><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Vicente Guerrero 416, Centro, Oaxaca de Juárez</span><a class="btn" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Reservar por WhatsApp</a></address>
+<iframe loading="lazy" src="https://www.google.com/maps?q=Vicente+Guerrero+416%2C+Centro%2C+Oaxaca+de+Ju%C3%A1rez&output=embed" title="Mapa de Greco Barbería"></iframe>
+</div></div></section>
+</main>
+<footer><div class="wrap"><p>© Greco Barbería</p>
+<p class="nota">Propuesta de diseño preparada para Greco Barbería. No es el sitio oficial.</p></div></footer>
+<a class="wa-float" href="https://wa.me/529241795248?text=Hola%2C%20quiero%20reservar%20un%20corte" aria-label="Escribir por WhatsApp"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></a>
 </body>
 </html>
